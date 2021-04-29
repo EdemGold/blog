@@ -1,0 +1,28 @@
+{% extends "entries/base.html" %}
+
+{% block content %} 
+
+  <a href="{% url 'blog-home' %}" class="btn btn-secondary ">← Back </a>
+  <div class="card mb-4">
+    <div class="card-body">
+        <h3 class="card-title">{{ object.entry_title }}</h3>
+        <p class="card-text">{{ object.entry_text|linebreaks }} &darr;</p>
+    
+    </div>
+    <div class="card-footer text-muted">
+        Posted on {{ object.entry_date }} by
+        <a href="#!">{{ object.entry_author }}</a>
+    </div>
+  </div>
+ 
+ 
+
+
+<!-- Pagination-->
+<ul class="pagination justify-content-center mb-4">
+    <li class="page-item"><a class="page-link" href="#!">← Older </a></li>
+    <li class="page-item"><a class="page-link" href="#!">Newer →</a></li>
+</ul>
+</div>
+</div>
+{% endblock %}
